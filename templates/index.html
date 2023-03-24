@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator by Carla Heywood</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5 w-50 text-center d-flex align-items-center justify-content-center">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <h2><strong>QR Code Generator</strong></h2>
+                    <p>Create a QR code for any link in seconds. <br> Enter your link below to update your preview and download link.</p>     
+                    <form class="" action="{{ url_for('makeqrcode') }}" method="POST">
+                        <div class="row">
+                            <div class="col">
+                                <img src="{{ url_for('static', filename=qrcodename) }}" alt="qrcode">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex align-items-center justify-content-center">
+                                <input type="text" class="form-control me-2" id="weblink" name="weblink" aria-describedby="basic-addon3" placeholder="https://example.com">
+                                <button type="submit" class="btn btn-primary">Generate</button>
+                            </div>
+                            <p class="p-3 mt-5 bg-success-subtle rounded">Download: <a class="" href="{{ url_for('static', filename=qrcodename) }}" download="{{ url_for('static', filename=qrcodename) }}">{{ qrcodename }}</a></p>
+                        </div>
+                        <!-- <a class="btn btn-primary mt-5 w-50" href="{{ url_for('static', filename=qrcodename) }}" download="{{ url_for('static', filename=qrcodename) }}">Download</a> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="fixed-bottom d-flex align-items-center justify-content-center">© Carla Heywood</p>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
