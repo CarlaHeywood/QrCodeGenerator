@@ -7,3 +7,5 @@ Create a QR Code for any link displayed on the front end and also creates a down
     pip3 install -r requirements.txt
     python run.py
 ```
+
+<img src="https://raw.githubusercontent.com/CarlaHeywood/QrCodeGenerator/main/Screenshot.png">
