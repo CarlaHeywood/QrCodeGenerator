@@ -51,7 +51,9 @@ def makeqrcode():
     print(f.read())
     return render_template('index.html', qrcodename=qrcodename)
 
-app.debug = True
+app.debug = False
 if __name__ == '__main__':
-   server = Server(app.wsgi_app)
-   server.serve()
+#    app.run(debug=bool(os.environ.get('FLASK_DEBUG', False)))
+#    server = Server(app.wsgi_app)
+#    server.serve(host='0.0.0.0', port=5000)
+   app.run(host='0.0.0.0', port=5000)
