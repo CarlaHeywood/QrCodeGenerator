@@ -56,4 +56,4 @@ app.debug = False
 #    app.run(debug=bool(os.environ.get('FLASK_DEBUG', False)))
 #    server = Server(app.wsgi_app)
 #    server.serve(host='0.0.0.0', port=5000)
-#    app.run(host='0.0.0.0', port=5000)
+   app.run(host='0.0.0.0', port=5000)
