@@ -13,7 +13,8 @@
       "includeFiles": "/**",
       "config": {
         "maxLambdaSize": "50mb",
-        "cmd": "python3 run.py"
+        "cmd": "python3 run.py",
+        "requirements": "requirements.txt"
       }
     }
   ]
