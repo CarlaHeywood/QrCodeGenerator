@@ -5,7 +5,7 @@
       "src": "/",
       "use": "@vercel/static-build",
       "config": {
-        "outputDirectory": "/static"
+        "outputDirectory": "/"
       }
     },
     {
