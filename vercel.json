@@ -7,6 +7,14 @@
       "config": {
         "outputDirectory": "/static"
       }
+    },
+    {
+      "use": "@vercel/python",
+      "includeFiles": "/**",
+      "config": {
+        "maxLambdaSize": "50mb",
+        "cmd": "python3 run.py"
+      }
     }
   ]
 }
