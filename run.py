@@ -3,7 +3,8 @@ from flask import Flask, request, render_template, redirect, url_for
 import werkzeug
 # from jinja2 import Markup, Environment, FileSystemLoader
 
-from livereload import Server
+# from livereload import Server
+from datetime import datetime
 
 from qrcode import *
 
