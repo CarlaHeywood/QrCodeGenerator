@@ -21,7 +21,7 @@ print("*******************************")
 # Main Page
 @app.route('/', methods=['GET', 'POST'])
 def index():
-        return render_template('index.html', qrcodename="qr_carlaheywood.com.png")
+        return render_template('index.html', qrcodename="qr_carlaheywood.com.png", current_year=datetime.now().year)
 
 @app.route('/newQRcode', methods=['POST'])
 def makeqrcode():
@@ -50,7 +50,7 @@ def makeqrcode():
     qr.print_ascii(out=f)
     f.seek(0)
     print(f.read())
-    return render_template('index.html', qrcodename=qrcodename)
+    return render_template('index.html', qrcodename=qrcodename, current_year=datetime.now().year)
 
 app.debug = False
 if __name__ == '__main__':
