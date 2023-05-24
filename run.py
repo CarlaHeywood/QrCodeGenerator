@@ -50,7 +50,7 @@ def makeqrcode():
     qr.print_ascii(out=f)
     f.seek(0)
     print(f.read())
-    return render_template('index.html', qrcodename=qrcodename, current_year=datetime.now().year)
+    return index()
 
 app.debug = False
 if __name__ == '__main__':
