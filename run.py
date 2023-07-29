@@ -12,12 +12,6 @@ app = Flask(__name__, static_url_path='/qrimg', static_folder='qrimg')
 
 app.config['SECRET_KEY'] = SECRET_KEY = os.urandom(12)
 
-print("*******************************")
-print("*                             *")
-print("*           Welcome!          *")
-print("*                             *")
-print("*******************************")
-
 # Main Page
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -26,19 +20,19 @@ def index():
 @app.route('/newQRcode', methods=['POST'])
 def makeqrcode():
     # https://github.com/lincolnloop/python-qrcode
-    
+
     weblink = request.form['weblink']
-    print("Weblink: ",weblink)
+    # print("Weblink: ",weblink)
 
     # Encoding data using make() function
     img = qrcode.make(weblink)
     
     # Saving as an image file
     qrcodename = "qr_" + weblink[8:] + ".png"
-    print(qrcodename)
+    # print(qrcodename)
     img.save('qrimg/' + qrcodename)
 
-    #Creating an instance of qrcode
+    # Creating an instance of qrcode
     qr = qrcode.QRCode(
             version=1,
             box_size=10,
@@ -50,11 +44,8 @@ def makeqrcode():
     qr.print_ascii(out=f)
     f.seek(0)
     print(f.read())
-    return index()
+    return render_template('index.html', qrcodename=qrcodename, current_year=datetime.now().year)
 
 app.debug = False
 if __name__ == '__main__':
-#    app.run(debug=bool(os.environ.get('FLASK_DEBUG', False)))
-#    server = Server(app.wsgi_app)
-#    server.serve(host='0.0.0.0', port=5000)
    app.run(host='0.0.0.0', port=5000)
