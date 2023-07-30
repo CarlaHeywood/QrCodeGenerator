@@ -2,7 +2,7 @@
 
 Create a QR Code for any link displayed on the front end and also creates a downloadable image for reuse.
 
-<a href="http://44.211.59.253:5000/">Demo Link</a>
+<a href="http://3.84.164.56:5002/">Demo Link</a>
 
 ```
     virtualenv env
